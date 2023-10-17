@@ -1,5 +1,5 @@
-#ifndef UZYTKOWNIKMENADZER.H
-#define UZYTKOWNIKMENADZER.H
+#ifndef UZYTKOWNIKMENADZER_H
+#define UZYTKOWNIKMENADZER_H
 
 #include <iostream>
 #include <vector>
@@ -23,6 +23,7 @@ class UzytkownikMenadzer
     PlikZUzytkownikami plikZUzytkownikami;
 
 public:
+    UzytkownikMenadzer(string nazwaPlikuZUzytkownikami) : plikZUzytkownikami(nazwaPlikuZUzytkownikami) {};
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
