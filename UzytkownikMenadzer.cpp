@@ -63,3 +63,8 @@ bool UzytkownikMenadzer::czyIstniejeLogin(string login)
         }
     }
 }
+
+void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
+{
+    uzytkownicy = plikZUzytkownikami.wczytajUzytkownikowZPliku();
+}
