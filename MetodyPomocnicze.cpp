@@ -14,6 +14,16 @@ string MetodyPomocnicze::wczytajLinie()
     string wejscie = "";
     getline(cin, wejscie);
     return wejscie;
+    cin.sync();
+}
+
+int MetodyPomocnicze::konwersjaStringNaInt(string liczba)
+{
+    int liczbaInt;
+    istringstream iss(liczba);
+    iss >> liczbaInt;
+
+    return liczbaInt;
 }
 
 char MetodyPomocnicze::wczytajZnak()
@@ -73,4 +83,15 @@ char MetodyPomocnicze::wybierzOpcjeZMenuUzytkownika()
     wybor = wczytajZnak();
 
     return wybor;
+}
+
+string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku)
+{
+    string liczba = "";
+    while(isdigit(tekst[pozycjaZnaku]) == true)
+    {
+        liczba += tekst[pozycjaZnaku];
+        pozycjaZnaku ++;
+    }
+    return liczba;
 }
