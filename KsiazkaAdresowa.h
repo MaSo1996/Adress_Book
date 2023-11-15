@@ -5,6 +5,7 @@
 
 #include "UzytkownikMenadzer.h"
 #include "AdresatMenadzer.h"
+#include "PlikZAdresatami.h"
 
 using namespace std;
 
@@ -24,6 +25,7 @@ public:
     void wylogujUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void dodajAdresata();
+    void wypiszWszystkichAdresatow();
 };
 
 #endif

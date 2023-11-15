@@ -1,26 +1,17 @@
 #include "AdresatMenadzer.h"
 
-int AdresatMenadzer::pobierzIdOstatniegoAdresata()
-{
-    return idOstatniegoAdresata;
-}
-void AdresatMenadzer::ustawIdOstatniegoAdresata(int noweId)
-{
-    idOstatniegoAdresata = noweId;
-}
-
-int AdresatMenadzer::dodajAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
+void AdresatMenadzer::dodajAdresata(int idZalogowanegoUzytkownika)
 {
     Adresat adresat;
 
     system("cls");
     cout << " >>> DODAWANIE NOWEGO ADRESATA <<<" << endl << endl;
-    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, idOstatniegoAdresata);
+    adresat = podajDaneNowegoAdresata(idZalogowanegoUzytkownika, plikZAdresatami.pobierzIdOstatniegoAdresata());
 
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    return ++idOstatniegoAdresata;
+    plikZAdresatami.ustawIdOstatniegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
 }
 
 Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata)
@@ -48,4 +39,22 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, 
     adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
 
     return adresat;
+}
+
+void AdresatMenadzer::wypiszWszystkichAdresatow()
+{
+    for (size_t i = 0; i < adresaci.size(); i++)
+    {
+        cout << adresaci[i].pobierzId() << endl;
+        cout << adresaci[i].pobierzImie() << endl;
+        cout << adresaci[i].pobierzNazwisko() << endl;
+        cout << adresaci[i].pobierzNumerTelefonu() << endl;
+        cout << adresaci[i].pobierzAdres() << endl;
+        cout << adresaci[i].pobierzEmail() << endl;
+    }
+}
+
+void AdresatMenadzer::wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)
+{
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
 }

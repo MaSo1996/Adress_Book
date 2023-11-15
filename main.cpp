@@ -8,13 +8,8 @@ int main()
 {
     int idZalogowanego;
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
-    ksiazkaAdresowa.rejestracjaUzytkownika();
-    //ksiazkaAdresowa.rejestracjaUzytkownika();
-    idZalogowanego = ksiazkaAdresowa.logowanieUzytkownika();
-    cout << idZalogowanego;
-    system("pause");
+    ksiazkaAdresowa.logowanieUzytkownika();
     ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
-    ksiazkaAdresowa.wypiszWszystkichUzytkownikow();
-    //ksiazkaAdresowa.dodajAdresata(idZalogowanegoUzytkownika,0);
+    ksiazkaAdresowa.wypiszWszystkichAdresatow();
     return 0;
 }
