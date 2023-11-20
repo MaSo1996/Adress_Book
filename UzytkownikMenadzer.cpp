@@ -41,15 +41,13 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika()
     do
     {
         cout << "Podaj login: ";
-        cin >> login;
+        login = MetodyPomocnicze::wczytajLinie();
         uzytkownik.ustawLogin(login);
     }
     while (czyIstniejeLogin(uzytkownik.pobierzLogin()) == true);
 
-    string haslo;
     cout << "Podaj haslo: ";
-    cin >> haslo;
-    uzytkownik.ustawHaslo(haslo);
+    uzytkownik.ustawHaslo(MetodyPomocnicze::wczytajLinie());
 
     return uzytkownik;
 }
@@ -81,6 +79,13 @@ void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
 
 int UzytkownikMenadzer::logowanieUzytkownika()
 {
+    if (uzytkownicy.empty())
+    {
+        cout << "W ksiazce nie ma zadnych uzytkownikow!" << endl << endl;
+        system("pause");
+        return 0;
+    }
+
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 
@@ -101,8 +106,7 @@ int UzytkownikMenadzer::logowanieUzytkownika()
                 {
                     cout << endl << "Zalogowales sie." << endl << endl;
                     system("pause");
-                    idZalogowanegoUzytkownika = (itr -> Uzytkownik::pobierzId());
-                    return 0;
+                    return idZalogowanegoUzytkownika = (itr -> Uzytkownik::pobierzId());
                 }
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
