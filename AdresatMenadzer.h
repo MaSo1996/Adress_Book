@@ -6,7 +6,6 @@
 #include "Adresat.h"
 #include "PlikZAdresatami.h"
 #include "MetodyPomocnicze.h"
-#include "UzytkownikMenadzer.h"
 
 class AdresatMenadzer
 {
@@ -14,8 +13,6 @@ class AdresatMenadzer
     PlikZAdresatami plikZAdresatami;
 
 public:
-    int pobierzIdOstatniegoAdresata();
-    void ustawIdOstatniegoAdresata(int noweId);
     AdresatMenadzer(string nazwaPlikuZAdresatami) : plikZAdresatami(nazwaPlikuZAdresatami) {}
     void dodajAdresata(int idZalogowanegoUzytkownika);
     Adresat podajDaneNowegoAdresata(int idZalogowanegoUzytkownika, int idOstatniegoAdresata);

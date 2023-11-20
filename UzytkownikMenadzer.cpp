@@ -79,6 +79,13 @@ void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
 
 int UzytkownikMenadzer::logowanieUzytkownika()
 {
+    if (uzytkownicy.empty())
+    {
+        cout << "W ksiazce nie ma zadnych uzytkownikow!" << endl << endl;
+        system("pause");
+        return 0;
+    }
+
     Uzytkownik uzytkownik;
     string login = "", haslo = "";
 

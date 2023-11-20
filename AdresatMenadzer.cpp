@@ -45,13 +45,14 @@ void AdresatMenadzer::wypiszWszystkichAdresatow()
 {
     for (size_t i = 0; i < adresaci.size(); i++)
     {
-        cout << adresaci[i].pobierzId() << endl;
-        cout << adresaci[i].pobierzImie() << endl;
-        cout << adresaci[i].pobierzNazwisko() << endl;
-        cout << adresaci[i].pobierzNumerTelefonu() << endl;
-        cout << adresaci[i].pobierzAdres() << endl;
-        cout << adresaci[i].pobierzEmail() << endl;
+        cout << "Id: " << adresaci[i].pobierzId() << endl;
+        cout << "Imie: " << adresaci[i].pobierzImie() << endl;
+        cout << "Nazwisko: " << adresaci[i].pobierzNazwisko() << endl;
+        cout << "Numer Telefonu: " << adresaci[i].pobierzNumerTelefonu() << endl;
+        cout << "Adres: " << adresaci[i].pobierzAdres() << endl;
+        cout << "Email:" << adresaci[i].pobierzEmail() << endl << endl;
     }
+    system("pause");
 }
 
 void AdresatMenadzer::wczytajAdresatowZPliku(int idZalogowanegoUzytkownika)

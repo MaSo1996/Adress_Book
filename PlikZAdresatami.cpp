@@ -22,11 +22,11 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
 
         if (czyPlikJestPusty() == true)
         {
-            plikTekstowy << liniaZDanymiAdresata << endl;
+            plikTekstowy << liniaZDanymiAdresata;
         }
         else
         {
-            plikTekstowy << liniaZDanymiAdresata << endl;
+            plikTekstowy << endl << liniaZDanymiAdresata;
         }
     }
     else
@@ -92,9 +92,11 @@ vector <Adresat> PlikZAdresatami::wczytajAdresatowZalogowanegoUzytkownikaZPliku(
     {
         idOstatniegoAdresata = (pobierzIdAdresataZDanychOddzielonychPionowymiKreskami(daneOstaniegoAdresataWPliku));
         return adresaci;
+        system("pause");
     }
     else
         return adresaci;
+        system("pause");
 }
 
 int PlikZAdresatami::pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami)
