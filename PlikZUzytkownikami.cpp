@@ -20,7 +20,10 @@ void PlikZUzytkownikami::dopiszUzytkownikaDoPliku(Uzytkownik uzytkownik)
         }
     }
     else
+    {
         cout << "Nie udalo sie otworzyc pliku " << nazwaPlikuZUzytkownikami << " i zapisac w nim danych." << endl;
+    }
+
     plikTekstowy.close();
 }
 
@@ -29,9 +32,13 @@ bool PlikZUzytkownikami::czyPlikJestPusty()
     ifstream plikTekstowy;
     plikTekstowy.seekg(0, ios::end);
     if (plikTekstowy.tellg() == 0)
+    {
         return true;
+    }
     else
+    {
         return false;
+    }
 }
 
 string PlikZUzytkownikami::zamienDaneUzytkownikaNaLinieZDanymiOddzielonaPionowymiKreskami(Uzytkownik uzytkownik)

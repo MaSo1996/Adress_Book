@@ -19,9 +19,10 @@ public:
     {
         uzytkownikMenadzer.wczytajUzytkownikowZPliku();
     };
+
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
-    int logowanieUzytkownika();
+    void logowanieUzytkownika();
     void wylogujUzytkownika();
     void wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     void zmianaHaslaZalogowanegoUzytkownika();

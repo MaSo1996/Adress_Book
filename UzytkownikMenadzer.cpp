@@ -55,9 +55,13 @@ Uzytkownik UzytkownikMenadzer::podajDaneNowegoUzytkownika()
 int UzytkownikMenadzer::pobierzIdNowegoUzytkownika()
 {
     if (uzytkownicy.empty() == true)
+    {
         return 1;
+    }
     else
+    {
         return uzytkownicy.back().pobierzId() + 1;
+    }
 }
 
 bool UzytkownikMenadzer::czyIstniejeLogin(string login)
@@ -112,18 +116,18 @@ int UzytkownikMenadzer::logowanieUzytkownika()
             }
             cout << "Wprowadzono 3 razy bledne haslo." << endl;
             system("pause");
-            return 0;
+            return idZalogowanegoUzytkownika = 0;
         }
         itr++;
     }
     cout << "Nie ma uzytkownika z takim loginem" << endl << endl;
     system("pause");
-    return 0;
+    return idZalogowanegoUzytkownika = 0;
 }
 
-void UzytkownikMenadzer::wylogujUzytkownika()
+int UzytkownikMenadzer::wylogujUzytkownika()
 {
-    idZalogowanegoUzytkownika = 0;
+    return idZalogowanegoUzytkownika = 0;
 }
 
 void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()

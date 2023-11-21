@@ -17,12 +17,14 @@ class PlikZAdresatami
     bool czyPlikJestPusty();
 
 public:
+    void ustawIdOstatniegoAdresata(int noweId);
+    int pobierzIdOstatniegoAdresata();
+
     PlikZAdresatami(string NAZWAPLIKUZADRESATAMI) : nazwaPlikuZAdresatami(NAZWAPLIKUZADRESATAMI)
     {
         idOstatniegoAdresata = 0;
     };
-    void ustawIdOstatniegoAdresata(int noweId);
-    int pobierzIdOstatniegoAdresata();
+
     void dopiszAdresataDoPliku(Adresat adresat);
     vector <Adresat> wczytajAdresatowZalogowanegoUzytkownikaZPliku(int idZalogowanegoUzytkownika);
     int pobierzIdUzytkownikaZDanychOddzielonychPionowymiKreskami(string daneJednegoAdresataOddzielonePionowymiKreskami);
