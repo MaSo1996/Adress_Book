@@ -12,7 +12,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 
 int KsiazkaAdresowa::logowanieUzytkownika()
 {
-    uzytkownikMenadzer.logowanieUzytkownika();
+    return uzytkownikMenadzer.logowanieUzytkownika();
 }
 
 void KsiazkaAdresowa::wylogujUzytkownika()

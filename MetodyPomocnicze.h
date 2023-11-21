@@ -1,5 +1,5 @@
-#ifndef METODYPOMOCNICZE.H
-#define METODYPOMOCNICZE.H
+#ifndef METODYPOMOCNICZE_H
+#define METODYPOMOCNICZE_H
 
 #include <iostream>
 

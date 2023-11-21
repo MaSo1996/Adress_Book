@@ -1,5 +1,5 @@
-#ifndef ADRESATMENADZER.H
-#define ADRESATMENADZER.H
+#ifndef ADRESATMENADZER_H
+#define ADRESATMENADZER_H
 
 #include <vector>
 

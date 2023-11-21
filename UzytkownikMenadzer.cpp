@@ -23,7 +23,7 @@ void UzytkownikMenadzer::rejestracjaUzytkownika()
 
 void UzytkownikMenadzer::wypiszWszystkichUzytkownikow()
 {
-    for (int i = 0; i < uzytkownicy.size(); i++)
+    for (size_t i = 0; i < uzytkownicy.size(); i++)
     {
         cout << uzytkownicy[i].pobierzId() << endl;
         cout << uzytkownicy[i].pobierzLogin() << endl;
@@ -70,6 +70,7 @@ bool UzytkownikMenadzer::czyIstniejeLogin(string login)
             return true;
         }
     }
+    return false;
 }
 
 void UzytkownikMenadzer::wczytajUzytkownikowZPliku()
