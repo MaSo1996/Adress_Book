@@ -123,7 +123,7 @@ int UzytkownikMenadzer::logowanieUzytkownika()
 
 void UzytkownikMenadzer::wylogujUzytkownika()
 {
-    ustawIdZalogowanegoUzytkownika(0);
+    idZalogowanegoUzytkownika = 0;
 }
 
 void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
@@ -142,4 +142,16 @@ void UzytkownikMenadzer::zmianaHaslaZalogowanegoUzytkownika()
         }
     }
     plikZUzytkownikami.zapiszWszystkichUzytkownikowDoPliku(uzytkownicy);
+}
+
+bool UzytkownikMenadzer::czyUzytkownikJestZalogowany()
+{
+    if (idZalogowanegoUzytkownika != 0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
 }

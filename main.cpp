@@ -9,11 +9,10 @@ int main()
     KsiazkaAdresowa ksiazkaAdresowa("Uzytkownicy.txt","Adresaci.txt");
 
     char wybor;
-    int idZalogowanegoUzytkownika = 0;
 
     while (true)
     {
-        if (idZalogowanegoUzytkownika == 0)
+        if (ksiazkaAdresowa.czyUzytkownikJestZalogowany() == false)
         {
             wybor = MetodyPomocnicze::wybierzOpcjeZMenuGlownego();
 
@@ -23,11 +22,7 @@ int main()
                 ksiazkaAdresowa.rejestracjaUzytkownika();
                 break;
             case '2':
-                idZalogowanegoUzytkownika = ksiazkaAdresowa.logowanieUzytkownika();
-                if (idZalogowanegoUzytkownika != 0)
-                {
-                    ksiazkaAdresowa.wczytajAdresatowZalogowanegoUzytkownikaZPliku();
-                }
+                ksiazkaAdresowa.logowanieUzytkownika();
                 break;
             case '9':
                 exit(0);
@@ -67,7 +62,7 @@ int main()
                 ksiazkaAdresowa.zmianaHaslaZalogowanegoUzytkownika();
                 break;
             case '8':
-                idZalogowanegoUzytkownika = 0;
+                ksiazkaAdresowa.wylogujUzytkownika();
                 break;
             }
         }

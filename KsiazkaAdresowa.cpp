@@ -13,6 +13,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 int KsiazkaAdresowa::logowanieUzytkownika()
 {
     return uzytkownikMenadzer.logowanieUzytkownika();
+    adresatMenadzer.ustawIdZalogowanegoUzytkownika(uzytkownikMenadzer.logowanieUzytkownika());
 }
 
 void KsiazkaAdresowa::wylogujUzytkownika()
@@ -38,4 +39,9 @@ void KsiazkaAdresowa::dodajAdresata()
 void KsiazkaAdresowa::wypiszWszystkichAdresatow()
 {
     adresatMenadzer.wypiszWszystkichAdresatow();
+}
+
+bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
+{
+    uzytkownikMenadzer.czyUzytkownikJestZalogowany();
 }

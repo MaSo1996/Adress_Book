@@ -30,6 +30,7 @@ public:
     {
         idZalogowanegoUzytkownika = 0;
     };
+
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
@@ -37,6 +38,7 @@ public:
     void wylogujUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void zapiszWszystkichUzytkownikowDoPliku();
+    bool czyUzytkownikJestZalogowany();
 };
 
 #endif
