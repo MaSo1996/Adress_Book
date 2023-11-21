@@ -30,13 +30,15 @@ public:
     {
         idZalogowanegoUzytkownika = 0;
     };
+
     void rejestracjaUzytkownika();
     void wypiszWszystkichUzytkownikow();
     void wczytajUzytkownikowZPliku();
     int logowanieUzytkownika();
-    void wylogujUzytkownika();
+    int wylogujUzytkownika();
     void zmianaHaslaZalogowanegoUzytkownika();
     void zapiszWszystkichUzytkownikowDoPliku();
+    bool czyUzytkownikJestZalogowany();
 };
 
 #endif
