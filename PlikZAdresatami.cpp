@@ -34,6 +34,8 @@ void PlikZAdresatami::dopiszAdresataDoPliku(Adresat adresat)
         cout << "Nie udalo sie otworzyc pliku i zapisac w nim danych." << endl;
     }
     plikTekstowy.close();
+
+    idOstatniegoAdresata++;
 }
 
 string PlikZAdresatami::zamienDaneAdresataNaLinieZDanymiOddzielonymiPionowymiKreskami(Adresat adresat)
