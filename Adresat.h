@@ -27,6 +27,17 @@ public:
     string pobierzNumerTelefonu();
     string pobierzEmail();
     string pobierzAdres();
+
+    Adresat(int ID = 0, int IDUZYTKOWNIKA = 0, string IMIE = "", string NAZWISKO = "", string NUMERTELEFONU = "", string EMAIL = "", string ADRES = "")
+    {
+        id = ID;
+        idUzytkownika = IDUZYTKOWNIKA;
+        imie = IMIE;
+        nazwisko = NAZWISKO;
+        numerTelefonu = NUMERTELEFONU;
+        email = EMAIL;
+        adres = ADRES;
+    }
 };
 
 #endif
