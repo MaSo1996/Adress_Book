@@ -13,7 +13,7 @@ void KsiazkaAdresowa::wypiszWszystkichUzytkownikow()
 void KsiazkaAdresowa::logowanieUzytkownika()
 {
     adresatMenadzer.ustawIdZalogowanegoUzytkownika(uzytkownikMenadzer.logowanieUzytkownika());
-    if (czyUzytkownikJestZalogowany() == true)
+    if (czyUzytkownikJestZalogowany())
     {
         wczytajAdresatowZalogowanegoUzytkownikaZPliku();
     }
