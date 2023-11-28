@@ -8,14 +8,6 @@ void AdresatMenadzer::ustawIdZalogowanegoUzytkownika(int noweId)
 {
     idZalogowanegoUzytkownika = noweId;
 }
-int AdresatMenadzer::pobierzIdOstatniegoAdresata()
-{
-    return idOstatniegoAdresata;
-}
-void AdresatMenadzer::ustawIdOstatniegoAdresata(int noweId)
-{
-    idOstatniegoAdresata = noweId;
-}
 
 void AdresatMenadzer::dodajAdresata()
 {
@@ -28,7 +20,7 @@ void AdresatMenadzer::dodajAdresata()
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    plikZAdresatami.ustawIdOstatniegoAdresata(idOstatniegoAdresata + 1);
+    plikZAdresatami.ustawIdOstatniegoAdresata(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
     system("pause");
 }
 
@@ -36,7 +28,7 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 {
     Adresat adresat;
 
-    adresat.ustawId(++idOstatniegoAdresata);
+    adresat.ustawId(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1);
     adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
 
     cout << "Podaj imie: ";
@@ -76,5 +68,4 @@ void AdresatMenadzer::wypiszWszystkichAdresatow()
 void AdresatMenadzer::wczytajAdresatowZPliku()
 {
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-    idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
 }
