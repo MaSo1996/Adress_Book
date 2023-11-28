@@ -88,7 +88,7 @@ char MetodyPomocnicze::wybierzOpcjeZMenuUzytkownika()
 string MetodyPomocnicze::pobierzLiczbe(string tekst, int pozycjaZnaku)
 {
     string liczba = "";
-    while(isdigit(tekst[pozycjaZnaku]) == true)
+    while(isdigit(tekst[pozycjaZnaku]))
     {
         liczba += tekst[pozycjaZnaku];
         pozycjaZnaku ++;

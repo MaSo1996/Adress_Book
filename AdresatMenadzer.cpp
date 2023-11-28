@@ -8,14 +8,6 @@ void AdresatMenadzer::ustawIdZalogowanegoUzytkownika(int noweId)
 {
     idZalogowanegoUzytkownika = noweId;
 }
-int AdresatMenadzer::pobierzIdOstatniegoAdresata()
-{
-    return idOstatniegoAdresata;
-}
-void AdresatMenadzer::ustawIdOstatniegoAdresata(int noweId)
-{
-    idOstatniegoAdresata = noweId;
-}
 
 void AdresatMenadzer::dodajAdresata()
 {
@@ -28,33 +20,32 @@ void AdresatMenadzer::dodajAdresata()
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
-    plikZAdresatami.ustawIdOstatniegoAdresata(idOstatniegoAdresata + 1);
     system("pause");
 }
 
 Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 {
-    Adresat adresat;
-
-    adresat.ustawId(++idOstatniegoAdresata);
-    adresat.ustawIdUzytkownika(idZalogowanegoUzytkownika);
+    int id, idUzytkownika;
+    string imie, nazwisko, numerTelefonu, email, adres;
 
     cout << "Podaj imie: ";
-    adresat.ustawImie(MetodyPomocnicze::wczytajLinie());
+    imie = MetodyPomocnicze::wczytajLinie();
     //adresat.ustawImie(zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.imie));
 
     cout << "Podaj nazwisko: ";
-    adresat.ustawNazwisko(MetodyPomocnicze::wczytajLinie());
+    nazwisko = MetodyPomocnicze::wczytajLinie();
     //adresat.ustawNazwisko(zamienPierwszaLitereNaDuzaAPozostaleNaMale(adresat.nazwisko));
 
     cout << "Podaj numer telefonu: ";
-    adresat.ustawNumerTelefonu(MetodyPomocnicze::wczytajLinie());
+    numerTelefonu = MetodyPomocnicze::wczytajLinie();
 
     cout << "Podaj email: ";
-    adresat.ustawEmail(MetodyPomocnicze::wczytajLinie());
+    email = MetodyPomocnicze::wczytajLinie();
 
     cout << "Podaj adres: ";
-    adresat.ustawAdres(MetodyPomocnicze::wczytajLinie());
+    adres = MetodyPomocnicze::wczytajLinie();
+
+    Adresat adresat(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1,idZalogowanegoUzytkownika,imie,nazwisko,numerTelefonu,email,adres);
 
     return adresat;
 }
@@ -76,5 +67,4 @@ void AdresatMenadzer::wypiszWszystkichAdresatow()
 void AdresatMenadzer::wczytajAdresatowZPliku()
 {
     adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
-    idOstatniegoAdresata = plikZAdresatami.pobierzIdOstatniegoAdresata();
 }
