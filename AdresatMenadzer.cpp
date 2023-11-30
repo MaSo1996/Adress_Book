@@ -25,7 +25,6 @@ void AdresatMenadzer::dodajAdresata()
 
 Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 {
-    int id, idUzytkownika;
     string imie, nazwisko, numerTelefonu, email, adres;
 
     cout << "Podaj imie: ";

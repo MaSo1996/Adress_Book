@@ -28,13 +28,13 @@ public:
     string pobierzEmail();
     string pobierzAdres();
 
-    Adresat(int ID = 0, int IDUZYTKOWNIKA = 0, string IMIE = "", string NAZWISKO = "", string NUMERTELEFONU = "", string EMAIL = "", string ADRES = "")
+    Adresat(int ID = 0, int ID_UZYTKOWNIKA = 0, string IMIE = "", string NAZWISKO = "", string NUMER_TELEFONU = "", string EMAIL = "", string ADRES = "")
     {
         id = ID;
-        idUzytkownika = IDUZYTKOWNIKA;
+        idUzytkownika = ID_UZYTKOWNIKA;
         imie = IMIE;
         nazwisko = NAZWISKO;
-        numerTelefonu = NUMERTELEFONU;
+        numerTelefonu = NUMER_TELEFONU;
         email = EMAIL;
         adres = ADRES;
     }
