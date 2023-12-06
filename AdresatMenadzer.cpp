@@ -1,14 +1,5 @@
 #include "AdresatMenadzer.h"
 
-int AdresatMenadzer::pobierzidZalogowanegoUzytkownika()
-{
-    return idZalogowanegoUzytkownika;
-}
-void AdresatMenadzer::ustawIdZalogowanegoUzytkownika(int noweId)
-{
-    idZalogowanegoUzytkownika = noweId;
-}
-
 void AdresatMenadzer::dodajAdresata()
 {
     Adresat adresat;
@@ -20,12 +11,12 @@ void AdresatMenadzer::dodajAdresata()
     adresaci.push_back(adresat);
     plikZAdresatami.dopiszAdresataDoPliku(adresat);
 
+    cout << endl << "Nowy adresat zostal dodany!" << endl;
     system("pause");
 }
 
 Adresat AdresatMenadzer::podajDaneNowegoAdresata()
 {
-    int id, idUzytkownika;
     string imie, nazwisko, numerTelefonu, email, adres;
 
     cout << "Podaj imie: ";
@@ -45,7 +36,7 @@ Adresat AdresatMenadzer::podajDaneNowegoAdresata()
     cout << "Podaj adres: ";
     adres = MetodyPomocnicze::wczytajLinie();
 
-    Adresat adresat(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1,idZalogowanegoUzytkownika,imie,nazwisko,numerTelefonu,email,adres);
+    Adresat adresat(plikZAdresatami.pobierzIdOstatniegoAdresata() + 1,ID_ZALOGOWANEGO_UZYTKOWNIKA,imie,nazwisko,numerTelefonu,email,adres);
 
     return adresat;
 }
@@ -66,5 +57,5 @@ void AdresatMenadzer::wypiszWszystkichAdresatow()
 
 void AdresatMenadzer::wczytajAdresatowZPliku()
 {
-    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(idZalogowanegoUzytkownika);
+    adresaci = plikZAdresatami.wczytajAdresatowZalogowanegoUzytkownikaZPliku(ID_ZALOGOWANEGO_UZYTKOWNIKA);
 }
