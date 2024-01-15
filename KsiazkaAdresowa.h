@@ -37,7 +37,10 @@ public:
     void dodajAdresata();
     void wypiszWszystkichAdresatow();
     void edytujAdresata();
+    void usunAdresata();
     bool czyUzytkownikJestZalogowany();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif

@@ -23,6 +23,7 @@ public:
 
     void dodajAdresata();
     Adresat podajDaneNowegoAdresata();
+    void wyswietlDaneAdresata(Adresat adresat);
     void wczytajAdresatowZPliku();
     void wypiszWszystkichAdresatow();
     void edytujAdresata();
@@ -31,6 +32,9 @@ public:
     void zaktualizujDaneWybranegoAdresata(Adresat adresat);
     int wczytajLiczbeCalkowita();
     char wczytajZnak();
+    int usunAdresata();
+    void wyszukajAdresatowPoImieniu();
+    void wyszukajAdresatowPoNazwisku();
 };
 
 #endif // ADRESATMENADZER

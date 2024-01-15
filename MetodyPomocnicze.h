@@ -2,6 +2,7 @@
 #define METODYPOMOCNICZE_H
 
 #include <iostream>
+#include <algorithm>
 
 using namespace std;
 
@@ -15,6 +16,7 @@ public:
     static char wybierzOpcjeZMenuGlownego();
     static char wybierzOpcjeZMenuUzytkownika();
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
+    static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
 };
 
 #endif
