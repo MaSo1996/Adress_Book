@@ -33,6 +33,7 @@ public:
     void edytujWybranaLinieWPliku(string liniaZDanymiAdresataOddzielonePionowymiKreskami);
     void usunPlik(string nazwaPlikuZRozszerzeniem);
     void zmienNazwePliku(string staraNazwa, string nowaNazwa);
+    void usunWybranaLinieWPliku(int idUsuwanegoAdresata);
 };
 
 #endif // PLIKZADRESATAMI_H

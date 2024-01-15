@@ -51,7 +51,21 @@ void KsiazkaAdresowa::edytujAdresata()
     adresatMenadzer->edytujAdresata();
 }
 
+void KsiazkaAdresowa::usunAdresata()
+{
+    adresatMenadzer->usunAdresata();
+}
+
 bool KsiazkaAdresowa::czyUzytkownikJestZalogowany()
 {
     return uzytkownikMenadzer.czyUzytkownikJestZalogowany();
+}
+
+void KsiazkaAdresowa::wyszukajAdresatowPoImieniu()
+{
+    adresatMenadzer->wyszukajAdresatowPoImieniu();
+}
+void KsiazkaAdresowa::wyszukajAdresatowPoNazwisku()
+{
+    adresatMenadzer->wyszukajAdresatowPoNazwisku();
 }
