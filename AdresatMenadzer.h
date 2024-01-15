@@ -25,6 +25,12 @@ public:
     Adresat podajDaneNowegoAdresata();
     void wczytajAdresatowZPliku();
     void wypiszWszystkichAdresatow();
+    void edytujAdresata();
+    int podajIdWybranegoAdresata();
+    char wybierzOpcjeZMenuEdycja();
+    void zaktualizujDaneWybranegoAdresata(Adresat adresat);
+    int wczytajLiczbeCalkowita();
+    char wczytajZnak();
 };
 
 #endif // ADRESATMENADZER
