@@ -7,19 +7,17 @@
 #include "Adresat.h"
 #include "MetodyPomocnicze.h"
 #include "UzytkownikMenadzer.h"
+#include "PlikTekstowy.h"
 
-class PlikZAdresatami
+class PlikZAdresatami: public PlikTekstowy
 {
-    const string NAZWA_PLIKU_Z_ADRESATAMI;
     int idOstatniegoAdresata;
-
-    bool czyPlikJestPusty(fstream & plikTekstowy);
 
 public:
     void ustawIdOstatniegoAdresata(int noweId);
     int pobierzIdOstatniegoAdresata();
 
-    PlikZAdresatami(string nazwaPlikuZAdresatami) : NAZWA_PLIKU_Z_ADRESATAMI(nazwaPlikuZAdresatami)
+    PlikZAdresatami(string nazwaPlikuZAdresatami) : PlikTekstowy(nazwaPlikuZAdresatami)
     {
         idOstatniegoAdresata = 0;
     };

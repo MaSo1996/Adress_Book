@@ -28,10 +28,7 @@ public:
     void wypiszWszystkichAdresatow();
     void edytujAdresata();
     int podajIdWybranegoAdresata();
-    char wybierzOpcjeZMenuEdycja();
     void zaktualizujDaneWybranegoAdresata(Adresat adresat);
-    int wczytajLiczbeCalkowita();
-    char wczytajZnak();
     int usunAdresata();
     void wyszukajAdresatowPoImieniu();
     void wyszukajAdresatowPoNazwisku();

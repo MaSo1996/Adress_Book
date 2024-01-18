@@ -82,7 +82,7 @@ void AdresatMenadzer::edytujAdresata()
         if (adresaci[i].pobierzId() == idEdytowanegoAdresata)
         {
             czyIstniejeAdresat = true;
-            wybor = wybierzOpcjeZMenuEdycja();
+            wybor = MetodyPomocnicze::wybierzOpcjeZMenuEdycja();
 
             switch (wybor)
             {
@@ -133,27 +133,8 @@ int AdresatMenadzer::podajIdWybranegoAdresata()
 {
     int idWybranegoAdresata = 0;
     cout << "Podaj numer ID Adresata: ";
-    idWybranegoAdresata  = wczytajLiczbeCalkowita();
+    idWybranegoAdresata  = MetodyPomocnicze::wczytajLiczbeCalkowita();
     return idWybranegoAdresata;
-}
-
-char AdresatMenadzer::wybierzOpcjeZMenuEdycja()
-{
-    char wybor;
-
-    cout << endl << "   >>> MENU  EDYCJA <<<" << endl;
-    cout << "---------------------------" << endl;
-    cout << "Ktore dane zaktualizowac: " << endl;
-    cout << "1 - Imie" << endl;
-    cout << "2 - Nazwisko" << endl;
-    cout << "3 - Numer telefonu" << endl;
-    cout << "4 - Email" << endl;
-    cout << "5 - Adres" << endl;
-    cout << "6 - Powrot " << endl;
-    cout << endl << "Twoj wybor: ";
-    wybor = wczytajZnak();
-
-    return wybor;
 }
 
 void AdresatMenadzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
@@ -164,42 +145,6 @@ void AdresatMenadzer::zaktualizujDaneWybranegoAdresata(Adresat adresat)
     plikZAdresatami.edytujWybranaLinieWPliku(liniaZDanymiAdresata);
 
     cout << endl << "Dane zostaly zaktualizowane." << endl << endl;
-}
-
-int AdresatMenadzer::wczytajLiczbeCalkowita()
-{
-    string wejscie = "";
-    int liczba = 0;
-
-    while (true)
-    {
-        getline(cin, wejscie);
-
-        stringstream myStream(wejscie);
-        if (myStream >> liczba)
-            break;
-        cout << "To nie jest liczba. Wpisz ponownie. " << endl;
-    }
-    return liczba;
-}
-
-char AdresatMenadzer::wczytajZnak()
-{
-    string wejscie = "";
-    char znak  = {0};
-
-    while (true)
-    {
-        getline(cin, wejscie);
-
-        if (wejscie.length() == 1)
-        {
-            znak = wejscie[0];
-            break;
-        }
-        cout << "To nie jest pojedynczy znak. Wpisz ponownie." << endl;
-    }
-    return znak;
 }
 
 int AdresatMenadzer::usunAdresata()
@@ -219,7 +164,7 @@ int AdresatMenadzer::usunAdresata()
         {
             czyIstniejeAdresat = true;
             cout << endl << "Potwierdz naciskajac klawisz 't': ";
-            znak = wczytajZnak();
+            znak = MetodyPomocnicze::wczytajZnak();
             if (znak == 't')
             {
                 plikZAdresatami.usunWybranaLinieWPliku(idUsuwanegoAdresata);
