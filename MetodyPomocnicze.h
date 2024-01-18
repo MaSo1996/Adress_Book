@@ -17,6 +17,8 @@ public:
     static char wybierzOpcjeZMenuUzytkownika();
     static string pobierzLiczbe(string tekst, int pozycjaZnaku);
     static string zamienPierwszaLitereNaDuzaAPozostaleNaMale(string tekst);
+    static int wczytajLiczbeCalkowita();
+    static char wybierzOpcjeZMenuEdycja();
 };
 
 #endif
